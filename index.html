@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <title>Жребий</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --parchment: #efe2c4;
+      --parchment-edge: #d9c49a;
+      --ink: #3b2f22;
+      --terracotta: #b5532f;
+      --top: max(var(--tg-safe-area-inset-top, 0px) + var(--tg-content-safe-area-inset-top, 0px), env(safe-area-inset-top, 0px));
+      --bottom: max(var(--tg-safe-area-inset-bottom, 0px) + var(--tg-content-safe-area-inset-bottom, 0px), env(safe-area-inset-bottom, 0px));
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; height: 100%; background: #000; color: var(--ink);
+      font-family: "Lora", Georgia, serif; overflow: hidden;
+      -webkit-user-select: none; user-select: none;
+    }
+    .scene { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+    video { width: 100%; height: 100%; object-fit: contain; background: #000; }
+    .plate {
+      position: fixed; left: 50%; transform: translateX(-50%);
+      bottom: calc(var(--bottom) + 20px);
+      width: min(92vw, 560px); padding: 14px 18px;
+      background: var(--parchment); border: 1px solid var(--parchment-edge); border-radius: 6px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .45);
+      display: flex; flex-direction: column; gap: 12px; align-items: center; text-align: center;
+      opacity: 0; transition: opacity .6s ease;
+    }
+    .plate.show { opacity: 1; }
+    .caption { margin: 0; font-size: 17px; line-height: 1.4; }
+    button {
+      font: 600 17px "Lora", Georgia, serif; color: #fff8ec;
+      background: var(--terracotta); border: 0; border-radius: 6px;
+      padding: 12px 28px; min-width: 160px; cursor: pointer;
+    }
+    button:active { transform: translateY(1px); }
+    .play {
+      position: fixed; inset: 0; margin: auto; width: 88px; height: 88px; min-width: 0; padding: 0;
+      border-radius: 50%; font-size: 34px; display: none;
+    }
+    .play.show { display: block; }
+    .skip {
+      position: fixed; right: 14px; top: calc(var(--top) + 12px);
+      min-width: 0; padding: 6px 12px; font-size: 14px;
+      background: rgba(239, 226, 196, .85); color: var(--ink);
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <video id="video" playsinline webkit-playsinline muted preload="auto"></video>
+  </div>
+  <button class="play" id="play" aria-label="Смотреть">▶</button>
+  <button class="skip" id="skip">Пропустить</button>
+  <div class="plate" id="plate">
+    <p class="caption" id="caption"></p>
+    <button id="next">Дальше</button>
+  </div>
+
+  <script>
+    // Сцены игры. Новую сцену добавляем сюда и открываем по адресу ?scene=<ключ>.
+    const SCENES = {
+      doroga: {
+        video: "media/doroga.mp4",
+        poster: "media/doroga_poster.jpg",
+        caption: "Вы идёте к Театру Диониса на склоне Акрополя.",
+      },
+    };
+
+    const tg = window.Telegram && window.Telegram.WebApp;
+    const params = new URLSearchParams(location.search);
+    const scene = SCENES[params.get("scene")] || SCENES.doroga;
+
+    const video = document.getElementById("video");
+    const plate = document.getElementById("plate");
+    const play = document.getElementById("play");
+    const skip = document.getElementById("skip");
+
+    video.src = scene.video;
+    video.poster = scene.poster;
+    document.getElementById("caption").textContent = scene.caption;
+
+    if (tg) {
+      tg.ready();
+      tg.expand();
+      try { tg.setHeaderColor("#000000"); tg.setBackgroundColor("#000000"); } catch (e) {}
+      if (tg.isVersionAtLeast && tg.isVersionAtLeast("8.0")) {
+        try { tg.requestFullscreen(); } catch (e) {}
+      }
+      if (tg.isVersionAtLeast && tg.isVersionAtLeast("7.7")) {
+        try { tg.disableVerticalSwipes(); } catch (e) {}
+      }
+    }
+
+    function finish() {
+      plate.classList.add("show");
+      skip.style.display = "none";
+    }
+
+    video.addEventListener("ended", finish);
+    skip.addEventListener("click", () => { video.pause(); finish(); });
+
+    play.addEventListener("click", () => {
+      play.classList.remove("show");
+      video.play();
+    });
+
+    video.play().catch(() => play.classList.add("show"));
+
+    document.getElementById("next").addEventListener("click", () => {
+      if (tg && tg.initData) {
+        tg.close();
+      } else {
+        document.getElementById("caption").textContent = "Вернитесь в Telegram и нажмите «Дальше» под сообщением.";
+      }
+    });
+  </script>
+</body>
+</html>
