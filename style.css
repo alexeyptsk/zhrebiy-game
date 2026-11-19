@@ -131,7 +131,7 @@ html, body {
   font-size: .72em;
   letter-spacing: .05em;
   text-transform: uppercase;
-  color: var(--terracotta);
+  color: var(--terracotta-dark); /* мелкий текст: контраст 5,6 вместо 3,9 */
   font-weight: 600;
 }
 .kicker:empty { display: none; }
