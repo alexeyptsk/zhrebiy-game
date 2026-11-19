@@ -13,23 +13,33 @@
 <body>
   <div class="loading" id="loading">Загрузка…</div>
 
-  <div class="app" id="app" hidden>
-    <div class="frame">
-      <div class="picture"><img id="img" alt=""></div>
-      <div class="side">
-        <div class="panel" id="panel">
-          <p class="kicker" id="kicker"></p>
-          <div class="text" id="text"></div>
-        </div>
-        <div class="choices" id="choices"></div>
+  <div class="rotate" id="rotate">
+    <div class="rotate-icon">📱</div>
+    <p>Поверните телефон горизонтально</p>
+  </div>
+
+  <div class="stage" id="stage" hidden>
+    <div class="cam" id="cam"><img id="img" alt=""></div>
+    <div class="hotspots" id="hotspots"></div>
+    <div class="caption" id="caption"></div>
+    <div class="tablets" id="tablets"></div>
+
+    <div class="panel" id="panel">
+      <div class="panel-body" id="panelBody">
+        <p class="kicker" id="kicker"></p>
+        <div class="text" id="text"></div>
       </div>
+      <div class="choices" id="choices"></div>
     </div>
+
+    <button class="skip" id="skip">Пропустить ›</button>
+    <div class="toast" id="toast"></div>
   </div>
 
   <div class="video-layer" id="videoLayer">
     <video id="video" playsinline webkit-playsinline muted preload="auto"></video>
     <button class="play" id="videoPlay" aria-label="Смотреть">▶</button>
-    <button class="skip" id="videoSkip">Пропустить</button>
+    <button class="skip show" id="videoSkip">Пропустить ›</button>
     <div class="plate" id="videoPlate">
       <p id="videoCaption"></p>
       <button id="videoNext">Дальше</button>
