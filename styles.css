@@ -1,0 +1,102 @@
+/* Токены — design.md, раздел 5. Интерфейс — пергамент поверх кадра. */
+:root{
+  --bg:#0f0c09; --parchment:#efe2c4; --parchment-2:#e6d5b0; --parchment-edge:#c9ae7e;
+  --button:#f8efdb; --button-hover:#fff6e4; --ink:#3b2f22; --ink-soft:#6b5a45;
+  --terracotta:#b5532f; --terracotta-hover:#c45d37; --terracotta-dark:#8f3f22; --ok:#4f6b2c; --on-accent:#fff8ec;
+  --font-ui:"Lora",Georgia,"Times New Roman",serif; --font-hand:"Neucha","Lora",cursive;
+  --base:16px; color-scheme:dark;
+}
+html,body{height:100%;margin:0;background:var(--bg);overflow:hidden}
+body{font-family:var(--font-ui);color:var(--ink);-webkit-tap-highlight-color:transparent}
+#app{position:fixed;inset:0;display:grid;place-items:center;padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px);background:var(--bg)}
+#stage{position:relative;aspect-ratio:16/9;width:min(100vw,calc(100vh*16/9));max-height:100vh;overflow:hidden;background:var(--bg);font-size:var(--base)}
+#game,#game canvas{position:absolute;inset:0;width:100%!important;height:100%!important;display:block}
+#ui{position:absolute;inset:0;pointer-events:none;font-weight:500;line-height:1.45}
+#ui>*{pointer-events:auto}
+#loading,#rotate{position:fixed;inset:0;display:grid;place-items:center;background:var(--bg);color:var(--parchment);text-align:center;font-family:var(--font-ui);z-index:50}
+#loading[hidden],#rotate[hidden]{display:none}
+#rotate .phone{width:40px;height:68px;border:3px solid var(--parchment);border-radius:8px;margin:0 auto 16px;animation:rot 2.4s ease-in-out infinite}
+@keyframes rot{0%,30%{transform:rotate(0)}60%,100%{transform:rotate(-90deg)}}
+/* плашка */
+.plaque{position:absolute;bottom:4%;width:45%;max-height:82%;display:flex;flex-direction:column;background:var(--parchment);border:1px solid var(--parchment-edge);border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,.5);animation:rise .35s ease-out both}
+.plaque.left{left:2.5%}.plaque.right{right:2.5%}.plaque.center{left:50%;transform:translateX(-50%);animation:fade .35s ease-out both}
+.plaque .body{overflow:auto;padding:.9em 1.1em .4em;display:flex;flex-direction:column;gap:.65em}
+.plaque .acts{padding:.4em 1.1em .9em;display:grid;gap:.4em}
+.acts.two{grid-template-columns:1fr 1fr}.acts.three{grid-template-columns:1fr 1fr 1fr}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.over{font-size:.72em;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--terracotta-dark)}
+.plaque h2{font-size:1.25em;font-weight:600;margin:0;color:var(--ink);text-wrap:balance}
+.plaque p{margin:0}
+.soft{color:var(--ink-soft);font-size:.88em}
+.quote{background:var(--parchment-2);border-left:3px solid var(--terracotta);border-radius:0 6px 6px 0;padding:.55em .8em;font-style:italic}
+.card{background:var(--parchment-2);border:1px solid var(--parchment-edge);border-radius:6px;padding:.6em .8em;display:flex;flex-direction:column;gap:.3em}
+.card b{font-weight:600}
+.tag{align-self:flex-start;font-size:.78em;color:var(--ink-soft);border:1px solid var(--parchment-edge);border-radius:6px;padding:0 .45em}
+.verdict{font-weight:600}.verdict.ok{color:var(--ok)}.verdict.no{color:var(--terracotta-dark)}
+.score{display:grid;grid-template-columns:1fr 1fr;gap:.5em}
+.score .cell{background:var(--parchment-2);border:1px solid var(--parchment-edge);border-radius:6px;padding:.5em .7em}
+.score .num{font-size:1.4em;font-weight:600;color:var(--terracotta)}
+/* кнопки */
+.btn{font:inherit;font-size:.95em;min-height:2.6em;padding:.35em .8em;border-radius:6px;border:1px solid var(--parchment-edge);background:var(--button);color:var(--ink);cursor:pointer;text-align:left;line-height:1.25}
+.btn:hover{background:var(--button-hover)}.btn:active{transform:translateY(1px)}
+.btn.primary{background:var(--terracotta);border-color:var(--terracotta-dark);color:var(--on-accent);font-weight:600;text-align:center}
+.btn.primary:hover{background:var(--terracotta-hover)}
+.btn[disabled]{opacity:.5;cursor:default}
+.btn.picked{border-color:var(--terracotta-dark);background:var(--parchment-2)}
+.btn .rank{display:inline-grid;place-items:center;width:1.5em;height:1.5em;border-radius:50%;background:var(--terracotta);color:var(--on-accent);font-weight:600;font-size:.85em;margin-right:.4em}
+.btn:focus-visible,.icon:focus-visible{outline:2px solid var(--terracotta-dark);outline-offset:2px}
+/* крупный момент */
+.moment{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;animation:fade .5s both}
+.moment .dim{position:absolute;inset:0;background:rgba(15,12,9,.4)}
+.moment .bar{position:relative;height:12%;background:#151009;z-index:1}
+.moment .bar.top{clip-path:polygon(0 0,100% 0,100% 82%,93% 100%,84% 86%,72% 98%,60% 85%,48% 100%,36% 88%,24% 99%,12% 86%,0 97%)}
+.moment .bar.bot{clip-path:polygon(0 4%,10% 16%,22% 2%,34% 14%,46% 0,58% 15%,70% 3%,82% 14%,92% 0,100% 12%,100% 100%,0 100%)}
+.moment .mid{position:relative;flex:1;display:flex;align-items:flex-end;justify-content:center;gap:2%;padding:0 3%}
+.portrait{height:92%;max-width:24%;object-fit:contain;filter:drop-shadow(2px 0 0 #fff8ec) drop-shadow(-2px 0 0 #fff8ec) drop-shadow(0 2px 0 #fff8ec) drop-shadow(0 -2px 0 #fff8ec);align-self:flex-end}
+.portrait.svg{height:70%;width:22%;display:flex;align-items:flex-end;justify-content:center}.portrait.svg svg{height:100%;width:100%}
+.bubble{position:relative;align-self:center;max-width:46%;background:var(--parchment);border-radius:6px;box-shadow:0 6px 24px rgba(0,0,0,.45);padding:.8em 1.1em;display:flex;flex-direction:column;gap:.5em}
+.bubble .who{font-family:var(--font-hand);font-size:.95em;letter-spacing:.06em;text-transform:uppercase;color:var(--terracotta-dark);text-align:center}
+.bubble .say{font-family:var(--font-hand);font-size:1.15em;line-height:1.3}
+.bubble:after{content:"";position:absolute;bottom:22%;width:0;height:0;border:12px solid transparent}
+.bubble.from-left:after{left:-22px;border-right-color:var(--parchment)}
+.bubble.from-right:after{right:-22px;border-left-color:var(--parchment)}
+.bubble .acts{display:grid;gap:.4em}
+/* подписи и уведомления */
+.caption{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);max-width:70%;background:var(--parchment);border-radius:6px;box-shadow:0 6px 24px rgba(0,0,0,.45);padding:.7em 1.1em;font-size:1.05em;text-align:center;animation:fade .5s both}
+.caption .acts{display:flex;justify-content:center;gap:.4em;margin-top:.6em}
+.notice{position:absolute;top:3%;left:50%;transform:translateX(-50%);max-width:60%;background:rgba(15,12,9,.78);color:var(--parchment);border-radius:6px;padding:.45em .9em;font-size:.92em;text-align:center;animation:fade .3s both}
+.timer{position:absolute;top:3%;left:50%;transform:translateX(-50%);background:var(--parchment);border:1px solid var(--parchment-edge);border-radius:6px;padding:.15em .7em;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink);box-shadow:0 6px 24px rgba(0,0,0,.35)}
+.timer.low{color:var(--terracotta-dark)}
+.prompt{position:absolute;left:50%;bottom:4%;transform:translateX(-50%);background:var(--parchment);border:1px solid var(--parchment-edge);border-radius:6px;padding:.3em .8em;font-size:.92em;box-shadow:0 6px 24px rgba(0,0,0,.35);cursor:pointer}
+.prompt kbd{font-family:var(--font-ui);font-weight:600;border:1px solid var(--parchment-edge);border-radius:4px;padding:0 .35em;background:var(--button)}
+.task{position:absolute;top:12%;left:2%;max-width:30%;background:rgba(239,226,196,.92);border:1px solid var(--parchment-edge);border-radius:6px;padding:.35em .7em;font-size:.85em}
+.task .over{display:block}
+/* иконки — бумажная вырезка по углам */
+.icons{position:absolute;top:2.5%;display:flex;gap:.5em}
+.icons.left{left:2%}.icons.right{right:2%}
+.icon{width:2.4em;height:2.4em;border-radius:50%;border:none;background:var(--parchment);box-shadow:0 0 0 2px #fff8ec,0 4px 12px rgba(0,0,0,.35);display:grid;place-items:center;cursor:pointer;color:var(--ink);padding:0}
+.icon svg{width:58%;height:58%}
+.icon[aria-pressed="false"] svg{opacity:.45}
+/* полноэкранные картинки и видео */
+.scene{position:absolute;inset:0;overflow:hidden;animation:fade .5s both;background:var(--bg)}
+.scene img,.scene video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.scene img.pan{animation:pan 14s ease-in-out infinite alternate}
+@keyframes pan{from{object-position:0% 50%}to{object-position:100% 50%}}
+.skip{position:absolute;top:2.5%;right:2.5%;background:rgba(239,226,196,.72);border:1px solid var(--parchment-edge);border-radius:6px;padding:.3em .8em;font:inherit;font-size:.9em;color:var(--ink);cursor:pointer;z-index:3}
+.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:4em;height:4em;border-radius:50%;border:1px solid var(--terracotta-dark);background:var(--terracotta);color:var(--on-accent);font-size:1.2em;cursor:pointer}
+/* меню */
+.menu{position:absolute;inset:0;display:flex;align-items:center;padding-left:6%;animation:fade .5s both}
+.menu .box{width:40%;max-height:86%;overflow:auto;font-size:.92em;background:var(--parchment);border:1px solid var(--parchment-edge);border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,.5);padding:1.2em 1.4em;display:flex;flex-direction:column;gap:.7em}
+.menu h1{margin:0;font-size:2.4em;font-weight:600;color:var(--ink);letter-spacing:.02em}
+.meander{height:.6em;background:repeating-linear-gradient(90deg,var(--terracotta-dark) 0 .6em,transparent .6em .85em,var(--terracotta-dark) .85em 1.1em,transparent 1.1em 1.45em);opacity:.75}
+/* листы */
+.list{display:flex;flex-direction:column;gap:.35em}
+.list .hint{font-size:.92em;border-bottom:1px dashed var(--parchment-edge);padding-bottom:.3em}
+.tablets{display:flex;gap:.4em;flex-wrap:wrap}
+.tablet{width:4.4em;min-height:5.2em;background:#e9d9b6;border:1px solid var(--parchment-edge);border-radius:4px;box-shadow:0 6px 18px rgba(0,0,0,.5);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;font-size:.78em;padding:.3em;animation:rise .45s both}
+.tablet.mine{border:2px solid var(--terracotta)}.tablet small{color:var(--terracotta-dark);font-weight:600}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.plaque.still,.moment.still,.moment.still .bubble{animation:none}
+.plaque.still .body{animation:fade .25s both}

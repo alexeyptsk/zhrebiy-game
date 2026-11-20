@@ -1,0 +1,1770 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-11-20",
+  "source": {
+    "file": "source.png",
+    "original_filename": "218e2228-4c44-48f1-90b9-d4235ac3c32e.png",
+    "width": 1536,
+    "height": 1024
+  },
+  "status": "draft_manual_annotation_and_reconstructed_layers",
+  "coordinate_system": {
+    "origin": "top-left",
+    "x_axis": "right",
+    "y_axis": "down",
+    "units": "source_image_px",
+    "width": 1536,
+    "height": 1024,
+    "already_projected": true,
+    "apply_y_compression_again": false,
+    "perspective": "illustrated perspective; not calibrated orthographic",
+    "inverse_world_mapping": null,
+    "normalized": "nx=x/1536; ny=y/1024",
+    "display_mapping": "display_x=x*display_width/1536; display_y=y*display_height/1024",
+    "logical_reference": {
+      "width": 1200,
+      "height": 800,
+      "scale": 1.28,
+      "note": "Optional screen-space unit conversion only; not recovered world x/y."
+    }
+  },
+  "layers": [
+    {
+      "id": "01_far_background",
+      "file": "layers/01_far_background.png",
+      "z": 0,
+      "kind": "background",
+      "target_width": 1536,
+      "target_height": 1024,
+      "generated": true,
+      "exact_source_cutout": false
+    },
+    {
+      "id": "02_ground_paths",
+      "file": "layers/02_ground_paths.png",
+      "z": 1,
+      "kind": "registered_overlay",
+      "target_width": 1536,
+      "target_height": 1024,
+      "generated": true,
+      "exact_source_cutout": false
+    },
+    {
+      "id": "03_buildings",
+      "file": "layers/03_buildings.png",
+      "z": 2,
+      "kind": "registered_overlay",
+      "target_width": 1536,
+      "target_height": 1024,
+      "generated": true,
+      "exact_source_cutout": false
+    },
+    {
+      "id": "04_vegetation",
+      "file": "layers/04_vegetation.png",
+      "z": 3,
+      "kind": "registered_overlay",
+      "target_width": 1536,
+      "target_height": 1024,
+      "generated": true,
+      "exact_source_cutout": false
+    },
+    {
+      "id": "05_props",
+      "file": "layers/05_props.png",
+      "z": 4,
+      "kind": "registered_overlay",
+      "target_width": 1536,
+      "target_height": 1024,
+      "generated": true,
+      "exact_source_cutout": false
+    },
+    {
+      "id": "06_foreground",
+      "file": "layers/06_foreground.png",
+      "z": 5,
+      "kind": "registered_overlay",
+      "target_width": 1536,
+      "target_height": 1024,
+      "generated": true,
+      "exact_source_cutout": false
+    }
+  ],
+  "objects": [
+    {
+      "id": "house_west",
+      "label": "Западный дом",
+      "layer": "03_buildings",
+      "bbox": {
+        "x": 54,
+        "y": 203,
+        "w": 124,
+        "h": 90
+      },
+      "anchor": {
+        "x": 118,
+        "y": 290
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "house_northwest",
+      "label": "Верхний дом",
+      "layer": "03_buildings",
+      "bbox": {
+        "x": 350,
+        "y": 151,
+        "w": 134,
+        "h": 91
+      },
+      "anchor": {
+        "x": 416,
+        "y": 242
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "house_north",
+      "label": "Дом у развилки",
+      "layer": "03_buildings",
+      "bbox": {
+        "x": 475,
+        "y": 190,
+        "w": 139,
+        "h": 89
+      },
+      "anchor": {
+        "x": 546,
+        "y": 279
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "house_center",
+      "label": "Центральный дом",
+      "layer": "03_buildings",
+      "bbox": {
+        "x": 702,
+        "y": 325,
+        "w": 125,
+        "h": 88
+      },
+      "anchor": {
+        "x": 766,
+        "y": 413
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "shrine",
+      "label": "Малое святилище",
+      "layer": "03_buildings",
+      "bbox": {
+        "x": 343,
+        "y": 310,
+        "w": 93,
+        "h": 87
+      },
+      "anchor": {
+        "x": 391,
+        "y": 397
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "theatre",
+      "label": "Театр целиком",
+      "layer": "03_buildings",
+      "bbox": {
+        "x": 898,
+        "y": 201,
+        "w": 572,
+        "h": 256
+      },
+      "anchor": {
+        "x": 1198,
+        "y": 454
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": false,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "skene",
+      "label": "Скена",
+      "layer": "03_buildings",
+      "bbox": {
+        "x": 1050,
+        "y": 251,
+        "w": 292,
+        "h": 116
+      },
+      "anchor": {
+        "x": 1198,
+        "y": 367
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "orchestra",
+      "label": "Орхестра",
+      "layer": "03_buildings",
+      "bbox": {
+        "x": 1045,
+        "y": 348,
+        "w": 322,
+        "h": 85
+      },
+      "anchor": {
+        "x": 1206,
+        "y": 431
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": false,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "market",
+      "label": "Рынок",
+      "layer": "03_buildings",
+      "bbox": {
+        "x": 414,
+        "y": 560,
+        "w": 522,
+        "h": 207
+      },
+      "anchor": {
+        "x": 680,
+        "y": 767
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "patio",
+      "label": "Терраса голосования",
+      "layer": "03_buildings",
+      "bbox": {
+        "x": 1095,
+        "y": 490,
+        "w": 417,
+        "h": 217
+      },
+      "anchor": {
+        "x": 1302,
+        "y": 707
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": false,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "urn_phyle",
+      "label": "Урна жребия с постаментом",
+      "layer": "05_props",
+      "bbox": {
+        "x": 84,
+        "y": 590,
+        "w": 126,
+        "h": 217
+      },
+      "anchor": {
+        "x": 147,
+        "y": 807
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "offering_table",
+      "label": "Стол с чашами",
+      "layer": "05_props",
+      "bbox": {
+        "x": 190,
+        "y": 755,
+        "w": 133,
+        "h": 81
+      },
+      "anchor": {
+        "x": 257,
+        "y": 836
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "urn_vote",
+      "label": "Левая урна террасы",
+      "layer": "05_props",
+      "bbox": {
+        "x": 1185,
+        "y": 495,
+        "w": 49,
+        "h": 61
+      },
+      "anchor": {
+        "x": 1210,
+        "y": 556
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "urn_secondary",
+      "label": "Правая урна террасы",
+      "layer": "05_props",
+      "bbox": {
+        "x": 1359,
+        "y": 487,
+        "w": 40,
+        "h": 53
+      },
+      "anchor": {
+        "x": 1379,
+        "y": 540
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "patio_table_left",
+      "label": "Левый стол террасы",
+      "layer": "05_props",
+      "bbox": {
+        "x": 1252,
+        "y": 553,
+        "w": 114,
+        "h": 61
+      },
+      "anchor": {
+        "x": 1308,
+        "y": 614
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "patio_table_right",
+      "label": "Правый стол террасы",
+      "layer": "05_props",
+      "bbox": {
+        "x": 1333,
+        "y": 539,
+        "w": 104,
+        "h": 61
+      },
+      "anchor": {
+        "x": 1385,
+        "y": 600
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "olive_west",
+      "label": "Западная олива",
+      "layer": "04_vegetation",
+      "bbox": {
+        "x": 0,
+        "y": 316,
+        "w": 149,
+        "h": 207
+      },
+      "anchor": {
+        "x": 68,
+        "y": 521
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "olive_shrine",
+      "label": "Олива у святилища",
+      "layer": "04_vegetation",
+      "bbox": {
+        "x": 105,
+        "y": 293,
+        "w": 169,
+        "h": 132
+      },
+      "anchor": {
+        "x": 194,
+        "y": 425
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "olive_house",
+      "label": "Олива у домов",
+      "layer": "04_vegetation",
+      "bbox": {
+        "x": 198,
+        "y": 184,
+        "w": 167,
+        "h": 164
+      },
+      "anchor": {
+        "x": 286,
+        "y": 345
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "olive_west_path",
+      "label": "Олива у западной тропы",
+      "layer": "04_vegetation",
+      "bbox": {
+        "x": 290,
+        "y": 393,
+        "w": 172,
+        "h": 138
+      },
+      "anchor": {
+        "x": 388,
+        "y": 528
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "olive_plaza",
+      "label": "Олива у площади",
+      "layer": "04_vegetation",
+      "bbox": {
+        "x": 173,
+        "y": 478,
+        "w": 185,
+        "h": 154
+      },
+      "anchor": {
+        "x": 254,
+        "y": 630
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "olive_center",
+      "label": "Центральная олива",
+      "layer": "04_vegetation",
+      "bbox": {
+        "x": 560,
+        "y": 345,
+        "w": 170,
+        "h": 114
+      },
+      "anchor": {
+        "x": 651,
+        "y": 458
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "olive_east_junction",
+      "label": "Дерево у восточной развилки",
+      "layer": "04_vegetation",
+      "bbox": {
+        "x": 748,
+        "y": 381,
+        "w": 157,
+        "h": 138
+      },
+      "anchor": {
+        "x": 826,
+        "y": 514
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "cypress_center",
+      "label": "Кипарис у центрального дома",
+      "layer": "04_vegetation",
+      "bbox": {
+        "x": 849,
+        "y": 252,
+        "w": 46,
+        "h": 189
+      },
+      "anchor": {
+        "x": 873,
+        "y": 439
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "cypress_east",
+      "label": "Восточный кипарис",
+      "layer": "04_vegetation",
+      "bbox": {
+        "x": 1464,
+        "y": 389,
+        "w": 65,
+        "h": 220
+      },
+      "anchor": {
+        "x": 1500,
+        "y": 609
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "foreground_olive",
+      "label": "Передняя олива",
+      "layer": "06_foreground",
+      "bbox": {
+        "x": 1139,
+        "y": 723,
+        "w": 376,
+        "h": 301
+      },
+      "anchor": {
+        "x": 1327,
+        "y": 1012
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "foreground_cypress",
+      "label": "Передний кипарис",
+      "layer": "06_foreground",
+      "bbox": {
+        "x": 1061,
+        "y": 754,
+        "w": 99,
+        "h": 270
+      },
+      "anchor": {
+        "x": 1112,
+        "y": 1022
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "foreground_wall_left",
+      "label": "Передняя левая стена",
+      "layer": "06_foreground",
+      "bbox": {
+        "x": 171,
+        "y": 895,
+        "w": 527,
+        "h": 129
+      },
+      "anchor": {
+        "x": 436,
+        "y": 1023
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    },
+    {
+      "id": "foreground_wall_right",
+      "label": "Передняя правая стена",
+      "layer": "06_foreground",
+      "bbox": {
+        "x": 938,
+        "y": 899,
+        "w": 324,
+        "h": 125
+      },
+      "anchor": {
+        "x": 1100,
+        "y": 1023
+      },
+      "anchor_kind": "ground_contact_estimate",
+      "occluder": true,
+      "registration": "manual_source_image_annotation"
+    }
+  ],
+  "hotspots": [
+    {
+      "id": "urn_phyle",
+      "label": "Жребий",
+      "pos": [
+        147,
+        807
+      ],
+      "access_pos": [
+        225,
+        746
+      ],
+      "interaction_radius_px": 100,
+      "status": "proposed_gameplay_mapping",
+      "object_id": "urn_phyle",
+      "step": 1
+    },
+    {
+      "id": "parade_spot",
+      "label": "Место парада",
+      "pos": [
+        834,
+        786
+      ],
+      "access_pos": [
+        834,
+        786
+      ],
+      "interaction_radius_px": 90,
+      "status": "proposed_gameplay_mapping",
+      "step": 2
+    },
+    {
+      "id": "theatre_gate",
+      "label": "Вход в театр",
+      "pos": [
+        1041,
+        448
+      ],
+      "access_pos": [
+        1041,
+        448
+      ],
+      "interaction_radius_px": 40,
+      "status": "proposed_gameplay_mapping",
+      "step": 3
+    },
+    {
+      "id": "seat_A",
+      "label": "Сектор своей филы",
+      "pos": [
+        991,
+        288
+      ],
+      "access_pos": [
+        989,
+        300
+      ],
+      "interaction_radius_px": 32,
+      "status": "proposed_gameplay_mapping",
+      "neighbor": "citizen",
+      "view": "mid"
+    },
+    {
+      "id": "seat_B",
+      "label": "Место гостей",
+      "pos": [
+        1368,
+        296
+      ],
+      "access_pos": [
+        1379,
+        302
+      ],
+      "interaction_radius_px": 32,
+      "status": "proposed_gameplay_mapping",
+      "neighbor": "guest",
+      "view": "far"
+    },
+    {
+      "id": "seat_C",
+      "label": "Передний ряд",
+      "pos": [
+        1036,
+        343
+      ],
+      "access_pos": [
+        1035,
+        368
+      ],
+      "interaction_radius_px": 32,
+      "status": "proposed_gameplay_mapping",
+      "neighbor": "expert",
+      "view": "best"
+    },
+    {
+      "id": "urn_vote",
+      "label": "Голосование",
+      "pos": [
+        1210,
+        556
+      ],
+      "access_pos": [
+        1206,
+        580
+      ],
+      "interaction_radius_px": 45,
+      "status": "proposed_gameplay_mapping",
+      "object_id": "urn_vote",
+      "step": 8
+    },
+    {
+      "id": "urn_secondary",
+      "label": "Вторая урна террасы",
+      "pos": [
+        1379,
+        540
+      ],
+      "access_pos": [
+        1421,
+        539
+      ],
+      "interaction_radius_px": 45,
+      "status": "proposed_gameplay_mapping",
+      "object_id": "urn_secondary",
+      "step": null
+    },
+    {
+      "id": "market",
+      "label": "Рынок",
+      "pos": [
+        679,
+        742
+      ],
+      "access_pos": [
+        678,
+        790
+      ],
+      "interaction_radius_px": 75,
+      "status": "proposed_gameplay_mapping",
+      "object_id": "market"
+    },
+    {
+      "id": "shrine",
+      "label": "Святилище",
+      "pos": [
+        391,
+        397
+      ],
+      "access_pos": [
+        451,
+        414
+      ],
+      "interaction_radius_px": 75,
+      "status": "proposed_gameplay_mapping",
+      "object_id": "shrine"
+    }
+  ],
+  "seats": [
+    {
+      "id": "A",
+      "pos": [
+        991,
+        288
+      ],
+      "level_hint": "middle",
+      "elevation_px": null
+    },
+    {
+      "id": "B",
+      "pos": [
+        1368,
+        296
+      ],
+      "level_hint": "middle",
+      "elevation_px": null
+    },
+    {
+      "id": "C",
+      "pos": [
+        1036,
+        343
+      ],
+      "level_hint": "front",
+      "elevation_px": null
+    }
+  ],
+  "npc": [
+    {
+      "id": "citizen",
+      "pos": [
+        1011,
+        299
+      ],
+      "seat": "A",
+      "present_in_source": false,
+      "status": "proposed_spawn_only"
+    },
+    {
+      "id": "guest",
+      "pos": [
+        1389,
+        307
+      ],
+      "seat": "B",
+      "aisle_spawn": [
+        1401,
+        326
+      ],
+      "present_in_source": false,
+      "status": "proposed_spawn_only"
+    },
+    {
+      "id": "expert",
+      "pos": [
+        1053,
+        350
+      ],
+      "seat": "C",
+      "present_in_source": false,
+      "status": "proposed_spawn_only"
+    },
+    {
+      "id": "priest",
+      "pos": [
+        1355,
+        356
+      ],
+      "present_in_source": false,
+      "status": "proposed_spawn_only"
+    },
+    {
+      "id": "herald",
+      "pos": [
+        1197,
+        367
+      ],
+      "present_in_source": false,
+      "status": "proposed_spawn_only"
+    },
+    {
+      "id": "crowd_back",
+      "pos": [
+        1179,
+        235
+      ],
+      "present_in_source": false,
+      "status": "proposed_spawn_only"
+    }
+  ],
+  "player": {
+    "start": [
+      340,
+      790
+    ],
+    "collision_foot_radius_px": 6,
+    "illustration_only": true
+  },
+  "blocked": [
+    {
+      "id": "house_west",
+      "type": "polygon",
+      "points": [
+        [
+          57,
+          250
+        ],
+        [
+          174,
+          251
+        ],
+        [
+          174,
+          291
+        ],
+        [
+          57,
+          291
+        ]
+      ]
+    },
+    {
+      "id": "house_northwest",
+      "type": "polygon",
+      "points": [
+        [
+          356,
+          199
+        ],
+        [
+          481,
+          199
+        ],
+        [
+          481,
+          242
+        ],
+        [
+          356,
+          242
+        ]
+      ]
+    },
+    {
+      "id": "house_north",
+      "type": "polygon",
+      "points": [
+        [
+          482,
+          235
+        ],
+        [
+          610,
+          235
+        ],
+        [
+          610,
+          280
+        ],
+        [
+          482,
+          280
+        ]
+      ]
+    },
+    {
+      "id": "house_center",
+      "type": "polygon",
+      "points": [
+        [
+          709,
+          371
+        ],
+        [
+          824,
+          371
+        ],
+        [
+          824,
+          413
+        ],
+        [
+          709,
+          413
+        ]
+      ]
+    },
+    {
+      "id": "shrine",
+      "type": "polygon",
+      "points": [
+        [
+          345,
+          363
+        ],
+        [
+          434,
+          362
+        ],
+        [
+          434,
+          397
+        ],
+        [
+          345,
+          397
+        ]
+      ]
+    },
+    {
+      "id": "market",
+      "type": "polygon",
+      "points": [
+        [
+          416,
+          617
+        ],
+        [
+          923,
+          677
+        ],
+        [
+          935,
+          757
+        ],
+        [
+          879,
+          772
+        ],
+        [
+          417,
+          693
+        ]
+      ]
+    },
+    {
+      "id": "urn_phyle",
+      "type": "polygon",
+      "points": [
+        [
+          85,
+          750
+        ],
+        [
+          202,
+          750
+        ],
+        [
+          209,
+          786
+        ],
+        [
+          173,
+          810
+        ],
+        [
+          85,
+          782
+        ]
+      ]
+    },
+    {
+      "id": "offering_table",
+      "type": "polygon",
+      "points": [
+        [
+          194,
+          791
+        ],
+        [
+          311,
+          778
+        ],
+        [
+          320,
+          816
+        ],
+        [
+          201,
+          837
+        ]
+      ]
+    },
+    {
+      "id": "skene",
+      "type": "polygon",
+      "points": [
+        [
+          1055,
+          332
+        ],
+        [
+          1339,
+          332
+        ],
+        [
+          1339,
+          367
+        ],
+        [
+          1055,
+          367
+        ]
+      ]
+    },
+    {
+      "id": "orchestra",
+      "type": "ellipse",
+      "cx": 1206,
+      "cy": 391,
+      "rx": 156,
+      "ry": 42
+    },
+    {
+      "id": "patio_table_left",
+      "type": "polygon",
+      "points": [
+        [
+          1251,
+          577
+        ],
+        [
+          1359,
+          566
+        ],
+        [
+          1367,
+          600
+        ],
+        [
+          1271,
+          615
+        ]
+      ]
+    },
+    {
+      "id": "patio_table_right",
+      "type": "polygon",
+      "points": [
+        [
+          1344,
+          563
+        ],
+        [
+          1437,
+          554
+        ],
+        [
+          1437,
+          586
+        ],
+        [
+          1355,
+          600
+        ]
+      ]
+    },
+    {
+      "id": "urn_vote",
+      "type": "circle",
+      "cx": 1210,
+      "cy": 552,
+      "r": 15
+    },
+    {
+      "id": "urn_secondary",
+      "type": "circle",
+      "cx": 1379,
+      "cy": 536,
+      "r": 14
+    },
+    {
+      "id": "seating_rows",
+      "type": "note",
+      "desc": "Ряды блокируются, проходы задаются вручную через navigation_graph; точная геометрия ярусов требует проверки."
+    }
+  ],
+  "navigation_graph": {
+    "status": "proposed_conservative_paths_not_verified_by_playtest",
+    "nodes": [
+      {
+        "id": "start",
+        "pos": [
+          340,
+          790
+        ]
+      },
+      {
+        "id": "urn_access",
+        "pos": [
+          225,
+          746
+        ]
+      },
+      {
+        "id": "square",
+        "pos": [
+          405,
+          771
+        ]
+      },
+      {
+        "id": "market_access",
+        "pos": [
+          678,
+          790
+        ]
+      },
+      {
+        "id": "parade",
+        "pos": [
+          834,
+          786
+        ]
+      },
+      {
+        "id": "south_junction",
+        "pos": [
+          975,
+          748
+        ]
+      },
+      {
+        "id": "east_road",
+        "pos": [
+          1184,
+          737
+        ]
+      },
+      {
+        "id": "central_junction",
+        "pos": [
+          937,
+          602
+        ]
+      },
+      {
+        "id": "central_road",
+        "pos": [
+          765,
+          553
+        ]
+      },
+      {
+        "id": "west_junction",
+        "pos": [
+          548,
+          468
+        ]
+      },
+      {
+        "id": "upper_junction",
+        "pos": [
+          687,
+          291
+        ]
+      },
+      {
+        "id": "uphill",
+        "pos": [
+          745,
+          222
+        ]
+      },
+      {
+        "id": "shrine_access",
+        "pos": [
+          451,
+          414
+        ]
+      },
+      {
+        "id": "village_path",
+        "pos": [
+          331,
+          416
+        ]
+      },
+      {
+        "id": "west_road",
+        "pos": [
+          331,
+          561
+        ]
+      },
+      {
+        "id": "house_access",
+        "pos": [
+          713,
+          424
+        ]
+      },
+      {
+        "id": "theatre_approach",
+        "pos": [
+          997,
+          478
+        ]
+      },
+      {
+        "id": "theatre_gate",
+        "pos": [
+          1041,
+          448
+        ]
+      },
+      {
+        "id": "theatre_left_outer",
+        "pos": [
+          1008,
+          390
+        ]
+      },
+      {
+        "id": "theatre_left_mid",
+        "pos": [
+          984,
+          337
+        ]
+      },
+      {
+        "id": "theatre_left_upper",
+        "pos": [
+          956,
+          280
+        ]
+      },
+      {
+        "id": "seat_a_access",
+        "pos": [
+          989,
+          300
+        ]
+      },
+      {
+        "id": "theatre_right_approach",
+        "pos": [
+          1400,
+          439
+        ]
+      },
+      {
+        "id": "theatre_right_outer",
+        "pos": [
+          1426,
+          370
+        ]
+      },
+      {
+        "id": "theatre_right_mid",
+        "pos": [
+          1401,
+          326
+        ]
+      },
+      {
+        "id": "seat_b_access",
+        "pos": [
+          1379,
+          302
+        ]
+      },
+      {
+        "id": "front_left",
+        "pos": [
+          1043,
+          402
+        ]
+      },
+      {
+        "id": "seat_c_access",
+        "pos": [
+          1035,
+          368
+        ]
+      },
+      {
+        "id": "patio_approach",
+        "pos": [
+          1073,
+          624
+        ]
+      },
+      {
+        "id": "patio_left_steps",
+        "pos": [
+          1114,
+          622
+        ]
+      },
+      {
+        "id": "patio_left_landing",
+        "pos": [
+          1155,
+          580
+        ]
+      },
+      {
+        "id": "vote_access",
+        "pos": [
+          1206,
+          580
+        ]
+      },
+      {
+        "id": "east_patio_road",
+        "pos": [
+          1334,
+          737
+        ]
+      },
+      {
+        "id": "patio_right_steps",
+        "pos": [
+          1420,
+          700
+        ]
+      },
+      {
+        "id": "patio_right_landing",
+        "pos": [
+          1441,
+          649
+        ]
+      },
+      {
+        "id": "patio_right_edge",
+        "pos": [
+          1455,
+          582
+        ]
+      },
+      {
+        "id": "secondary_urn_access",
+        "pos": [
+          1421,
+          539
+        ]
+      },
+      {
+        "id": "patio_back_right",
+        "pos": [
+          1455,
+          540
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "from": "start",
+        "to": "urn_access",
+        "width_px": 62,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "start",
+        "to": "square",
+        "width_px": 62,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "square",
+        "to": "market_access",
+        "width_px": 62,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "market_access",
+        "to": "parade",
+        "width_px": 62,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "parade",
+        "to": "south_junction",
+        "width_px": 62,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "south_junction",
+        "to": "east_road",
+        "width_px": 62,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "east_road",
+        "to": "central_junction",
+        "width_px": 62,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "central_junction",
+        "to": "central_road",
+        "width_px": 62,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "central_road",
+        "to": "west_junction",
+        "width_px": 62,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "west_junction",
+        "to": "upper_junction",
+        "width_px": 62,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "upper_junction",
+        "to": "uphill",
+        "width_px": 62,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "west_junction",
+        "to": "shrine_access",
+        "width_px": 62,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "shrine_access",
+        "to": "village_path",
+        "width_px": 62,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "village_path",
+        "to": "west_road",
+        "width_px": 62,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "west_road",
+        "to": "square",
+        "width_px": 62,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "central_road",
+        "to": "house_access",
+        "width_px": 62,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "central_junction",
+        "to": "theatre_approach",
+        "width_px": 18,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "theatre_approach",
+        "to": "theatre_gate",
+        "width_px": 18,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "theatre_gate",
+        "to": "theatre_left_outer",
+        "width_px": 18,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "theatre_left_outer",
+        "to": "theatre_left_mid",
+        "width_px": 18,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "theatre_left_mid",
+        "to": "theatre_left_upper",
+        "width_px": 18,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "theatre_left_mid",
+        "to": "seat_a_access",
+        "width_px": 18,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "theatre_gate",
+        "to": "front_left",
+        "width_px": 18,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "front_left",
+        "to": "seat_c_access",
+        "width_px": 18,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "theatre_approach",
+        "to": "theatre_right_approach",
+        "width_px": 18,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "theatre_right_approach",
+        "to": "theatre_right_outer",
+        "width_px": 18,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "theatre_right_outer",
+        "to": "theatre_right_mid",
+        "width_px": 18,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "theatre_right_mid",
+        "to": "seat_b_access",
+        "width_px": 18,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "central_junction",
+        "to": "patio_approach",
+        "width_px": 24,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "patio_approach",
+        "to": "patio_left_steps",
+        "width_px": 24,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "patio_left_steps",
+        "to": "patio_left_landing",
+        "width_px": 24,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "patio_left_landing",
+        "to": "vote_access",
+        "width_px": 24,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "east_road",
+        "to": "east_patio_road",
+        "width_px": 24,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "east_patio_road",
+        "to": "patio_right_steps",
+        "width_px": 24,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "patio_right_steps",
+        "to": "patio_right_landing",
+        "width_px": 24,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "patio_right_landing",
+        "to": "patio_right_edge",
+        "width_px": 24,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "patio_right_edge",
+        "to": "patio_back_right",
+        "width_px": 24,
+        "status": "proposed_manual_centerline"
+      },
+      {
+        "from": "patio_back_right",
+        "to": "secondary_urn_access",
+        "width_px": 20,
+        "status": "proposed_manual_centerline"
+      }
+    ]
+  },
+  "walkable_regions": [
+    {
+      "id": "west_square",
+      "type": "polygon",
+      "points": [
+        [
+          215,
+          722
+        ],
+        [
+          370,
+          694
+        ],
+        [
+          459,
+          725
+        ],
+        [
+          474,
+          811
+        ],
+        [
+          365,
+          846
+        ],
+        [
+          223,
+          837
+        ]
+      ]
+    },
+    {
+      "id": "market_apron",
+      "type": "polygon",
+      "points": [
+        [
+          373,
+          751
+        ],
+        [
+          679,
+          768
+        ],
+        [
+          923,
+          749
+        ],
+        [
+          1007,
+          794
+        ],
+        [
+          780,
+          851
+        ],
+        [
+          470,
+          837
+        ]
+      ]
+    }
+  ],
+  "elevation": {
+    "status": "unknown_not_inferred",
+    "ramps": [
+      {
+        "id": "theatre_left",
+        "path": [
+          "theatre_gate",
+          "theatre_left_outer",
+          "theatre_left_mid",
+          "theatre_left_upper"
+        ],
+        "start_z": null,
+        "end_z": null
+      },
+      {
+        "id": "theatre_right",
+        "path": [
+          "theatre_right_approach",
+          "theatre_right_outer",
+          "theatre_right_mid"
+        ],
+        "start_z": null,
+        "end_z": null
+      },
+      {
+        "id": "patio_left",
+        "path": [
+          "patio_left_steps",
+          "patio_left_landing"
+        ],
+        "start_z": null,
+        "end_z": null
+      },
+      {
+        "id": "patio_right",
+        "path": [
+          "patio_right_steps",
+          "patio_right_landing"
+        ],
+        "start_z": null,
+        "end_z": null
+      }
+    ]
+  },
+  "notes": [
+    "Координаты относятся к исходной картинке, а не к прежнему map_coordinates.json.",
+    "Позиции игровых точек, мест и NPC предложены для этой композиции и ещё не утверждены.",
+    "Опорные точки и границы вручную оценены по изображению; это не результат автоматической сегментации.",
+    "Слои воссозданы генератором с дорисовкой скрытых областей; их нельзя считать пиксельно точными вырезками исходника.",
+    "Y-sort: используйте anchor.y каждого объекта после нарезки отдельных спрайтов; цельный PNG-слой не обеспечивает индивидуальную Y-сортировку.",
+    "PNG-маска — консервативный черновик по предложенному графу. Белое проходимо, чёрное заблокировано, непроходимость за границами холста.",
+    "Историческая точность архитектуры исходной иллюстрации не проверялась."
+  ]
+}

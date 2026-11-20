@@ -1,0 +1,296 @@
+{
+  "_note": "Координаты — в пикселях исходной иллюстрации 1536×1024 (как в map.json). В игре умножаются на world.scale. phase — в каких фазах точка активна.",
+  "world": {
+    "source_w": 1536,
+    "source_h": 1024,
+    "scale": 1.5,
+    "viewport_w": 1920,
+    "viewport_h": 1080
+  },
+  "player": {
+    "start": [
+      340,
+      790
+    ],
+    "speed": 120,
+    "foot_radius": 6
+  },
+  "camera": {
+    "lerp": 0.1,
+    "deadzone": [
+      240,
+      90
+    ],
+    "stage_focus": [
+      1200,
+      330
+    ],
+    "stage_pan_ms": 800,
+    "dialog_zoom": 1.15
+  },
+  "parallax": {
+    "far": 0.2,
+    "foreground": 1.15
+  },
+  "timers": {
+    "seat": 45,
+    "interval": 60,
+    "prevote": 45,
+    "move_cost": 10
+  },
+  "theatre_center": [
+    1206,
+    391
+  ],
+  "spots": [
+    {
+      "id": "urn_phyle",
+      "label": "Урна жребия",
+      "pos": [
+        147,
+        807
+      ],
+      "access": [
+        225,
+        746
+      ],
+      "r": 100,
+      "phase": [
+        "lot"
+      ]
+    },
+    {
+      "id": "parade",
+      "label": "Место шествия",
+      "pos": [
+        834,
+        786
+      ],
+      "access": [
+        834,
+        786
+      ],
+      "r": 90,
+      "phase": [
+        "parade"
+      ]
+    },
+    {
+      "id": "gate",
+      "label": "Вход в театр",
+      "pos": [
+        1041,
+        448
+      ],
+      "access": [
+        1041,
+        448
+      ],
+      "r": 40,
+      "phase": []
+    },
+    {
+      "id": "seat_A",
+      "label": "Сектор твоей филы",
+      "pos": [
+        991,
+        288
+      ],
+      "access": [
+        989,
+        300
+      ],
+      "r": 34,
+      "phase": [
+        "seat",
+        "interval1",
+        "interval2",
+        "prevote"
+      ],
+      "seat": "A"
+    },
+    {
+      "id": "seat_B",
+      "label": "Место гостей",
+      "pos": [
+        1368,
+        296
+      ],
+      "access": [
+        1379,
+        302
+      ],
+      "r": 34,
+      "phase": [
+        "seat",
+        "interval1",
+        "interval2",
+        "prevote"
+      ],
+      "seat": "B"
+    },
+    {
+      "id": "seat_C",
+      "label": "Передний ряд",
+      "pos": [
+        1036,
+        343
+      ],
+      "access": [
+        1035,
+        368
+      ],
+      "r": 34,
+      "phase": [
+        "seat",
+        "interval1",
+        "interval2",
+        "prevote"
+      ],
+      "seat": "C"
+    },
+    {
+      "id": "urn_vote",
+      "label": "Урна голосования",
+      "pos": [
+        1210,
+        556
+      ],
+      "access": [
+        1206,
+        580
+      ],
+      "r": 50,
+      "phase": [
+        "prevote"
+      ]
+    }
+  ],
+  "npcs": [
+    {
+      "id": "citizen",
+      "name": "Сосед по филе",
+      "pos": [
+        1011,
+        299
+      ],
+      "colors": [
+        "#7e344a",
+        "#e2ceb4"
+      ],
+      "hint": "neighbor_A"
+    },
+    {
+      "id": "guest",
+      "name": "Гость с Хиоса",
+      "pos": [
+        1389,
+        307
+      ],
+      "aisle": [
+        1401,
+        326
+      ],
+      "colors": [
+        "#395f66",
+        "#f8c56e"
+      ],
+      "hint": "guest_B"
+    },
+    {
+      "id": "expert",
+      "name": "Знаток театра",
+      "pos": [
+        1053,
+        350
+      ],
+      "colors": [
+        "#4b7976",
+        "#dcc5f0"
+      ],
+      "hint": "expert_C"
+    },
+    {
+      "id": "priest",
+      "name": "Жрец Диониса",
+      "pos": [
+        1355,
+        356
+      ],
+      "colors": [
+        "#f8e5c6",
+        "#7b8257"
+      ],
+      "hint": "priest",
+      "ivy": true
+    },
+    {
+      "id": "herald",
+      "name": "Глашатай",
+      "pos": [
+        1197,
+        384
+      ],
+      "colors": [
+        "#dc6353",
+        "#f8e5c6"
+      ],
+      "staff": true
+    },
+    {
+      "id": "archon",
+      "name": "Архонт",
+      "pos": [
+        296,
+        742
+      ],
+      "colors": [
+        "#913f56",
+        "#f8e5c6"
+      ],
+      "staff": true
+    }
+  ],
+  "audience_groups": {
+    "citizens": {
+      "label": "Граждане",
+      "arc": [
+        195,
+        235
+      ],
+      "color": "#c4a591"
+    },
+    "metics": {
+      "label": "Метеки",
+      "arc": [
+        235,
+        265
+      ],
+      "color": "#8e935a"
+    },
+    "experts": {
+      "label": "Знатоки",
+      "arc": [
+        265,
+        300
+      ],
+      "color": "#4b7976"
+    },
+    "guests": {
+      "label": "Гости",
+      "arc": [
+        300,
+        345
+      ],
+      "color": "#dc6353"
+    },
+    "priest": {
+      "label": "Жрец",
+      "arc": [
+        270,
+        272
+      ],
+      "color": "#f8e5c6"
+    }
+  }
+}
